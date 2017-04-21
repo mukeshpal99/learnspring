@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+   
+   <bean 	
+   		id="myCoach" 
+   		class="com.company.springdemo.TrackCoach">
+   		
+   		<!-- set up constructor injection -->
+   		<constructor-arg ref="myFortune"/>
+   </bean>
+   
+   <bean 	
+   		id="myFortune" 
+   		class="com.company.springdemo.HappyFortureService">
+   		
+   </bean>
+   
+   <bean 	
+   		id="myCricketCoach" 
+   		class="com.company.springdemo.CricketCoach">
+   		
+   		<!-- set up setter injection -->
+   		<property name="fortuneService" ref="myFortune"/>
+ 
+   </bean>
+   
+</beans>
